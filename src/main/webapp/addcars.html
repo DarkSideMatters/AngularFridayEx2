@@ -1,0 +1,34 @@
+ <div class="col-md-3" style="border: thin lightblue solid; border-radius: 5px;padding: 1em;">
+    
+    <form name="carForm" ng-submit="ctrl.save()">
+        <select ng-options="car as car.registered for car in cars" 
+         ng-model="selectedItem" ng-change="update()"></select>
+        <br/>
+        Year:
+        <input type="number" ng-model="ctrl.car.year"/>
+        <br/>
+        <br/>
+        Registered:
+        <input type="date" ng-model="ctrl.car.registered"/>
+        <br/>
+        <br/>
+        Make:
+        <input type="text" ng-model="ctrl.car.make"/>
+        <br/>
+        <br/>
+        Model:
+        <input type="text" ng-model="ctrl.car.model"/>
+        <br/>
+        <br/>
+        Description:
+        <input type="textarea" ng-model="ctrl.car.description"/>
+        <br/>
+        <br/>
+        Price:
+        <input type="number" min="1" step="any" ng-model="ctrl.car.price"/>
+        <br/>
+        <br/>
+        <input type="hidden" ng-value="ctrl.car.id"/>
+        <input type="submit" value="Add"/>
+    </form>
+    </div>
